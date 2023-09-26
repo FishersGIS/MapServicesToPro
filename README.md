@@ -1,6 +1,6 @@
 # Map Services To Pro
 
-## 3-part process to prepare non-cached map services for ArcGIS Enterprise 11.1 and later  
+## 3-part process to prepare non-cached map services for new publishing workflows in ArcGIS Enterprise 11.1 and later  
 - Converts ArcMap documents to ArcGIS Pro projects
 - Optional metadata update/standardization feature
 - Overwrite services using ArcGIS Pro
@@ -8,11 +8,20 @@
 #### Set Up:  
 1. Modify scripts with necessary URLs, paths, and values. Commented lines within the scripts provide additional instruction.
 2. Create a Template ArcGIS Pro Project *without a map* in the parent folder. This should ultimately be a folder named "Template" with a file named "Template.aprx" within it.
-3. Optionally, prepare a CSV file containing metadata. Fields should include (in order): the service name, the service summary, the service description, and the service tags. Credit metadata is applied universally in the code based on the value entered during script modification. By default, the metadata update functions are turned off in MXD-TO-APRX.py. As part of the first set up step, be sure to change the metadata variable value to 'TRUE', if desired.
+3. Optionally, prepare a CSV file containing metadata. Fields should include (in order): the service name, the service summary, the service description, and the service tags. Credit metadata is applied universally in the code based on the value entered during script modification. A template CSV file is provided as a formatting guide. By default, the metadata update functions are turned off in MXD-TO-APRX.py. As part of the first set up step, be sure to change the metadata variable value to 'TRUE', if desired.
 
 ### **Part 1:** MXD TO APRX  
 Convert map documents to ArcGIS Pro Projects to prepare for new publishing workflows in ArcGIS Enterprise 11.1
 Command Line Arguments
+Run Modes and Specifications
+Examples
+`path\to\file d`
+`path\to\file p`
+`path\to\file d ServiceName`
+`path\to\file p ServiceName,Service_Name,servicename`
+`path\to\file p 10`
+`path\to\file p 1,10`
+
 Process overview
 
 ### **Part 2:** Manual APRX Configuration  
