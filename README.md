@@ -36,11 +36,13 @@ Convert map documents to ArcGIS Pro Projects to prepare for publishing workflows
 1. Accesses REST Service Directory to obtain a list of published services
 2. Iterates through map documents in a specified location and identifies matches to published service names
 3. For each match...
-  1. Copies the contents of the template project folder to a new folder named the same as the service
-  2. Imports the map document as a map into the copied template APRX file, names the same as the service
-  3. Applies metadata from the CSV to the map, if applicable
-  4. Copies template APRX file to a new APRX file named the same as the service
-  5. Deletes the copied template APRX file
+    1. Copies the contents of the template project folder to a new folder named the same as the service
+    2. Imports the map document as a map into the copied template APRX file, names the same as the service
+    3. Applies metadata from the CSV to the map, if applicable
+    4. Copies template APRX file to a new APRX file named the same as the service
+    5. Deletes the copied template APRX file
+
+An output log containing completed services, skipped services, and errors will be saved in the location specified in the code under the name **MXD-TO-APRX_output.txt**  
 
 ## **Part 2:** Manual APRX Configuration  
 For each newly created ArcGIS Pro Project...
@@ -65,6 +67,8 @@ Overwrite non-cached map services on a Stand Alone ArcGIS Server using ArcGIS Pr
     7. Stage the Service (convert the .sddraft to an .sd file)
     8. Upload/Publish the Service
 5. If the overwrite function is successful, continue to the next service, if not successful, stop the script
+
+An output log will be saved in the location specified in the code under the name **overwrite_map_services_log_timestamp.txt**
 
 **Important:**  
 Use this script with caution: It is intended to overwrite ArcGIS Map Services. If variables are not set properly, you may accidentally overwrite services that you did not intend to overwrite. Be very careful and use the settings in the code to test it before running in any final environment. It is reccommended to make a snapshot of your ArcGIS Server machine before running this script.
